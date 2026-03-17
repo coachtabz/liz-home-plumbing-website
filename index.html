@@ -2,225 +2,193 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LIZ HOME Plumbing Services</title>
+<title>LIZ Plumbing Services</title>
 
 <style>
-
-body{
-font-family:Arial;
-margin:0;
-background:#f4f4f4;
+body {
+  margin: 0;
+  font-family: Arial;
 }
 
-header{
-background:#0a66c2;
-color:white;
-padding:35px;
-text-align:center;
-}
-
-nav{
-background:#222;
-padding:12px;
-text-align:center;
-}
-
-nav a{
-color:#66ff99;
-margin:15px;
-text-decoration:none;
-font-weight:bold;
-}
-
-nav a:hover{
-color:#00bfff;
-}
-
-.hero{
-background:url("https://images.unsplash.com/photo-1581578731548-c64695cc6952") center/cover no-repeat;
-height:320px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#33cc99;
-font-size:30px;
-font-weight:bold;
-text-shadow:2px 2px 5px black;
-}
-.section p{
+/* NAV */
+nav {
+  background: #0a3d62;
   color: white;
+  padding: 15px;
+  text-align: center;
 }
 
-.section{
-background-color: skyblue;
-padding:50px;
-text-align:center;
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #38ada9, #079992);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.services{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
+/* SECTIONS */
+section {
+  padding: 30px;
+  text-align: center;
 }
 
-.card{
-background:white;
-width:250px;
-padding:20px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+/* SERVICES */
+.services {
+  background: #f4f4f4;
 }
 
-.gallery{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
+.card {
+  background: white;
+  margin: 10px;
+  padding: 20px;
+  display: inline-block;
+  width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
 }
 
-.gallery img{
-width:250px;
-border-radius:10px;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-button{
-background:#FF9933;
-color:white;
-border:none;
-padding:12px 22px;
-border-radius:5px;
-cursor:pointer;
+/* GALLERY */
+.gallery img {
+  width: 300px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s;
 }
 
-button:hover{
-background:#33ff66;
+.gallery img:hover {
+  transform: scale(1.05);
 }
 
-footer{
-background:gray;
-color:white;
-padding:20px;
-text-align:center;
+/* CONTACT SECTION LEVEL UP */
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.contact-box {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.contact-box h2 {
+  margin-bottom: 20px;
+}
+
+.contact-item {
+  margin: 15px 0;
+}
+
+.contact-btn {
+  display: block;
+  background: white;
+  color: #27ae60;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px 0;
+  transition: all 0.3s;
+}
+
+.contact-btn:hover {
+  background: #dff9fb;
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  background: #0a3d62;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
 </style>
 
 </head>
 
 <body>
 
-<header>
-<h1>LIZ HOME Plumbing Services</h1>
-<p>Fast • Reliable • Affordable Plumbing Solutions</p>
-</header>
-
+<!-- NAVBAR -->
 <nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
+  <h2>LIZ Plumbing</h2>
 </nav>
 
-<div class="hero">
-Your Trusted Home Plumbing Experts
-</div>
+<!-- HERO -->
+<section class="hero">
+  <h1>LIZ Pipe Works & Plumbing Services</h1>
+  <p>Professional Plumbing & Construction Services in Cebu</p>
+</section>
 
-<section class="section" id="about">
+<!-- ABOUT -->
+<section>
+  <h2>Company Profile</h2>
+  <p>Established in 2013, LIZ Pipe Works specializes in plumbing, piping, welding, and construction services.</p>
+</section>
 
-<h2>About Us</h2>
+<!-- SERVICES -->
+<section class="services">
+  <h2>Our Services</h2>
 
-<p>
-LIZ HOME Plumbing Services provides professional plumbing solutions
-for homes and small businesses. We specialize in pipe installation,
-leak repair, drain cleaning, faucet repair and bathroom fixture installation.
-</p>
+  <div class="card">Plumbing Works</div>
+  <div class="card">Welding Works</div>
+  <div class="card">House Renovation</div>
+  <div class="card">Electrical Works</div>
 
 </section>
 
-<section class="section" id="services">
+<!-- PROJECT GALLERY -->
+<section>
+  <h2>Project Gallery</h2>
 
-<h2>Our Services</h2>
-
-<div class="services">
-
-<div class="card">
-<h3>Pipe Installation</h3>
-<p2>Professional installation of water pipelines.</p2>
-</div>
-
-<div class="card">
-<h3>Leak Repair</h3>
-<p2>Fast repair of leaking pipes and plumbing systems.</p2>
-</div>
-
-<div class="card">
-<h3>Drain Cleaning</h3>
-<p2>Clearing clogged drains and sewer lines.</p2>
-</div>
-
-<div class="card">
-<h3>Toilet Installation</h3>
-<p2>Repair and installation of toilets.</p2>
-</div>
-
-</div>
-
+  <div class="gallery">
+    <img src="image1.jpg">
+    <img src="image2.jpg">
+    <img src="image3.jpg">
+  </div>
 </section>
 
-<section class="section" id="gallery">
-
-<h2>Our Work Gallery</h2>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea">
-<img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4">
-<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
-
-</div>
-
+<!-- HISTORY -->
+<section>
+  <h2>History</h2>
+  <p>
+    Experienced in power plants, gas plants, petrochemical plants,
+    and high-rise buildings. Serving both local and international companies.
+  </p>
 </section>
 
-<section class="section" id="contact">
+<!-- CONTACT LEVEL UP -->
+<section class="contact">
+  <div class="contact-box">
+    <h2>📞 Contact Us</h2>
 
-<h2>Contact Us</h2>
+    <p>📍 Mambaling Cebu City</p>
 
-<br>
+    <a class="contact-btn" href="tel:+639307971978">📱 Call Now</a>
 
-<!-- Phone -->
-<a href="tel:+639307971848">
-<button style="padding:12px 20px; font-size:16px; margin:5px; background:#33ff99; color:white; border:none; border-radius:5px; cursor:pointer;">
-📞 Call: +639307971848
-</button>
-</a>
+    <a class="contact-btn" href="mailto:aqb010266@gmail.com">✉️ Send Email</a>
 
-<br>
+    <a class="contact-btn" href="https://www.facebook.com/photo.php?fbid=1193658986145108&set=a.127955652715452&type=3&mibextid=rS40aB7S9Ucbxw6v" target="_blank">
+      👍 Visit Facebook
+    </a>
 
-<!-- Email -->
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=aqb010266@gmail.com" target="_blank">
-<button style="padding:12px 20px; font-size:16px; margin:5px; background:#33ff99; color:white; border:none; border-radius:5px; cursor:pointer;">
-📧 Email: aqb010266@gmail.com
-</button>
-</a>
-
-<br>
-
-<!-- Facebook -->
-<a href="https://www.facebook.com/100065030528391/posts/1258797559631250/?app=fbl" target="_blank">
-<button style="padding:12px 20px; font-size:16px; margin:5px; background:#33ff99; color:white; border:none; border-radius:5px; cursor:pointer;">
-📘 Facebook Page
-</button>
-</a>
-
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-
-<p>© 2026 LIZ HOME Plumbing Services</p>
-
+  <p>© 2026 LIZ Plumbing Services</p>
 </footer>
 
 </body>
-  </html>
+</html>
