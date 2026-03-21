@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liz Plumbing | Fire Pro Quality</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #FF4500;
+            --dark-charcoal: #121212;
+            --card-bg: #1e1e1e;
+            --white: #ffffff;
+            --gray-text: #b3b3b3;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        
+        /* Smooth Scrolling Fix */
+        html { scroll-behavior: smooth; }
+        
+        body { background-color: var(--dark-charcoal); color: var(--white); line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 8%; background: rgba(0, 0, 0, 0.95);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 2px solid var(--primary-orange);
+        }
+        .logo { font-size: 1.5rem; font-weight: 900; text-transform: uppercase; }
+        .logo span { color: var(--primary-orange); }
+        .nav-links { display: flex; list-style: none; gap: 20px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--white); font-weight: 600; font-size: 0.9rem; transition: var(--transition); }
+        .nav-links a:hover { color: var(--primary-orange); }
+        .btn-emergency { background: var(--primary-orange); padding: 10px 20px; border-radius: 4px; color: white !important; }
+
+        /* Hero Section */
+        .hero {
+            height: 95vh;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
+                        url('https://images.unsplash.com/photo-1504148455328-497c596d2d58?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); text-transform: uppercase; line-height: 1.1; margin-bottom: 15px; }
+        .hero span { color: var(--primary-orange); }
+        .hero p { color: var(--gray-text); max-width: 650px; margin-bottom: 30px; font-size: 1.1rem; }
+
+        /* Fixed Button Alignment */
+        .hero-btns {
+            display: flex; justify-content: center; align-items: center;
+            gap: 20px; flex-wrap: wrap;
+        }
+        .btn-hero {
+            text-decoration: none; padding: 16px 45px; border-radius: 50px;
+            font-weight: bold; font-size: 1rem; transition: var(--transition);
+            display: inline-flex; align-items: center; justify-content: center; min-width: 210px;
+        }
+        .btn-main { background: var(--primary-orange); color: white; border: 2px solid var(--primary-orange); }
+        .btn-outline { border: 2px solid white; color: white; background: transparent; }
+        .btn-hero:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(255, 69, 0, 0.4); }
+
+        /* Services */
+        .services { padding: 100px 8%; text-align: center; }
+        .section-title { font-size: 2.5rem; margin-bottom: 60px; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--primary-orange); position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: var(--card-bg); padding: 50px 30px; border-radius: 15px; border: 1px solid #333; transition: var(--transition); }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary-orange); }
+        .card i { font-size: 3.5rem; color: var(--primary-orange); margin-bottom: 25px; }
+
+        /* Contact Section */
+        .contact-section { padding: 100px 8%; background: #181818; }
+        .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; max-width: 1200px; margin: 0 auto; }
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+        .info-item i { color: var(--primary-orange); font-size: 1.3rem; }
+
+        /* Contact Form */
+        .contact-form { background: var(--card-bg); padding: 40px; border-radius: 15px; border: 1px solid #333; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; font-size: 0.85rem; color: var(--gray-text); margin-bottom: 8px; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #444; background: #252525; color: white; outline: none; transition: 0.3s;
+        }
+        .submit-btn {
+            width: 100%; padding: 16px; background: var(--primary-orange); color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+
+        /* Floating Buttons */
+        .chat-float { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 2000; }
+        .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: white; text-decoration: none; box-shadow: 2px 5px 15px rgba(0,0,0,0.4); transition: 0.3s; }
+        .whatsapp { background: #25d366; }
+        .messenger { background: #0084ff; }
+        .float-btn:hover { transform: scale(1.1); }
+
+        footer { padding: 40px; text-align: center; background: #000; color: var(--gray-text); font-size: 0.9rem; border-top: 1px solid #222; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .btn-hero { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">LIZ<span>PLUMBING</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="tel:09123456789" class="btn-emergency">Emergency Call</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Plumbing Excellence <span>Fire Pro Standard</span></h1>
+        <p>Expert installations, repairs, and 24/7 emergency services for your home and office.</p>
+        <div class="hero-btns">
+            <a href="#services" class="btn-hero btn-main">Our Services</a>
+            <a href="#contact" class="btn-hero btn-outline">Message Us</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2 class="section-title">Professional Solutions</h2>
+        <div class="service-grid">
+            <div class="card"><i class="fas fa-droplet-slash"></i><h3>Leak Repair</h3><p>Fast detection and repair for all pipe leaks.</p></div>
+            <div class="card"><i class="fas fa-hammer"></i><h3>Installations</h3><p>Professional plumbing setup for any property.</p></div>
+            <div class="card"><i class="fas fa-wrench"></i><h3>Maintenance</h3><p>Regular checkups to keep everything flowing.</p></div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <div class="info-item"><i class="fas fa-envelope"></i><span>aqb010266@gmail.com</span></div>
+                <div class="info-item"><i class="fas fa-location-dot"></i><span>Cebu City, Philippines</span></div>
+                <div style="margin-top:20px;">
+                    <a href="https://www.facebook.com/share/1CWGSwx2vD/" target="_blank" style="color:#0084ff; text-decoration:none; font-weight:bold;">
+                        <i class="fab fa-facebook-messenger"></i> Chat on Messenger
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form action="https://formspree.io/f/aqb010266@gmail.com" method="POST">
+                    <div class="form-group"><label>Name</label><input type="text" name="name" required placeholder="Juan Dela Cruz"></div>
+                    <div class="form-group"><label>Email</label><input type="email" name="_replyto" required placeholder="juan@email.com"></div>
+                    <div class="form-group"><label>Message</label><textarea name="message" rows="4" required placeholder="Plumbing concern..."></textarea></div>
+                    <button type="submit" class="submit-btn">Send Message Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Liz Plumbing | Powered by Syntax DevZone</p>
+    </footer>
+
+    <div class="chat-float">
+        <a href="https://www.facebook.com/share/1CWGSwx2vD/" class="float-btn messenger" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+        <a href="https://wa.me/639123456789" class="float-btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <script>
+        // Fix for "Back Button" behavior
+        window.addEventListener('load', function() {
+            if (window.history && window.history.pushState) {
+                // E-push ang state para naay "back" history ang browser sa sulod sa site
+                window.history.pushState('forward', null, './#home');
+                
+                window.addEventListener('popstate', function() {
+                    // Imbes mo-exit sa app, i-scroll lang siya balik sa Home
+                    window.location.hash = 'home';
+                });
+            }
+        });
+
+        // Additional smooth navigation for links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    // I-update ang URL hash nga dili mo-reload ang page
+                    history.pushState(null, null, this.getAttribute('href'));
+                }
+            });
+        });
+    </script>
+</body>
+                                                                  </html>
+                                                                  
